@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EventView: View {
+    @State private var isShowingResults = false
+    
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
@@ -21,7 +23,7 @@ struct EventView: View {
                 }
                 .listStyle(InsetGroupedListStyle())
                 
-                Button(action: {}, label: {
+                Button(action: { isShowingResults = true }, label: {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .frame(width: 60, height: 60)
@@ -31,6 +33,9 @@ struct EventView: View {
                 })
             }
             .navigationTitle(Text("2020"))
+            .sheet(isPresented: $isShowingResults) {
+                EventResultsView()
+            }
         }
         .tabItem {
             Image(systemName: "gamecontroller.fill")
