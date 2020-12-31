@@ -44,9 +44,11 @@ struct OnboardingView: View {
             
             Button(action: {
                 createUser()
+                UserDefaults.standard.setValue(true, forKey: "hasCompletedOnboarding")
                 isPresentingSelf = false
             }, label: {
                 Text("Done")
+                    .font(.title2)
                     .accentColor(.red)
             })
         }

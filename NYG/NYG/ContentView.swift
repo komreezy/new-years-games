@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseDatabase
 
 struct ContentView: View {
-    @State var isShowingOnboarding = true
+    @State var isShowingOnboarding = !UserDefaults.standard.bool(forKey: "hasCompletedOnboarding")
     @State var players: [Player] = []
     
     var body: some View {
