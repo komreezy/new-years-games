@@ -34,7 +34,9 @@ struct EventView: View {
             }
             .navigationTitle(Text("2020"))
             .sheet(isPresented: $isShowingResults) {
-                EventResultsView()
+                NavigationView {
+                    EventResultsView()
+                }
             }
         }
         .tabItem {

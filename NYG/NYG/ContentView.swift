@@ -27,6 +27,8 @@ var events: [Event] = [
 ]
 
 struct ContentView: View {
+    @State var isShowingOnboarding = true
+    
     var body: some View {
         TabView {
             NavigationView {
@@ -50,6 +52,9 @@ struct ContentView: View {
             EventView()
         }
         .accentColor(.red)
+        .sheet(isPresented: $isShowingOnboarding) {
+            IconSelectionView(showModal: $isShowingOnboarding)
+        }
     }
 }
 

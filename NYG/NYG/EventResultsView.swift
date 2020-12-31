@@ -22,7 +22,11 @@ struct EventResultsView: View {
         .navigationBarItems(trailing: Button(action: {
             self.isEditing = isEditing == .active ? .inactive : .active
         }, label: {
-            Text("Adjust")
+            HStack {
+                Image(systemName: "pencil.circle")
+                    .accentColor(.red)
+                Text("Adjust")
+            }
         }))
     }
     

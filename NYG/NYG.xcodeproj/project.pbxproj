@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3BDF050E34CB6D654EE68B1 /* Pods_NYG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0143B0A439442A17F636C05 /* Pods_NYG.framework */; };
 		B513908F259ADC1200A67E14 /* NYGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513908E259ADC1200A67E14 /* NYGApp.swift */; };
 		B5139091259ADC1200A67E14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5139090259ADC1200A67E14 /* ContentView.swift */; };
 		B5139093259ADC1300A67E14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5139092259ADC1300A67E14 /* Assets.xcassets */; };
@@ -15,9 +16,13 @@
 		B51390A6259AE51500A67E14 /* EventResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51390A5259AE51500A67E14 /* EventResultsView.swift */; };
 		B51390A9259AE54400A67E14 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51390A8259AE54400A67E14 /* Models.swift */; };
 		B51390AC259AE9A600A67E14 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51390AB259AE9A600A67E14 /* EventView.swift */; };
+		B51390BF259BDC5F00A67E14 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51390BE259BDC5F00A67E14 /* IconSelectionView.swift */; };
+		B51390C2259D98D800A67E14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B51390C1259D98D800A67E14 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52841BEBD6E657C2ED2035E8 /* Pods-NYG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYG.debug.xcconfig"; path = "Target Support Files/Pods-NYG/Pods-NYG.debug.xcconfig"; sourceTree = "<group>"; };
+		B322A122A8A924ADDF18AEEA /* Pods-NYG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYG.release.xcconfig"; path = "Target Support Files/Pods-NYG/Pods-NYG.release.xcconfig"; sourceTree = "<group>"; };
 		B513908B259ADC1200A67E14 /* NYG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B513908E259ADC1200A67E14 /* NYGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYGApp.swift; sourceTree = "<group>"; };
 		B5139090259ADC1200A67E14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,6 +33,9 @@
 		B51390A5259AE51500A67E14 /* EventResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventResultsView.swift; sourceTree = "<group>"; };
 		B51390A8259AE54400A67E14 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		B51390AB259AE9A600A67E14 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		B51390BE259BDC5F00A67E14 /* IconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionView.swift; sourceTree = "<group>"; };
+		B51390C1259D98D800A67E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D0143B0A439442A17F636C05 /* Pods_NYG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3BDF050E34CB6D654EE68B1 /* Pods_NYG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A584E6271E740863845D804 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0143B0A439442A17F636C05 /* Pods_NYG.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4151D00796E5D5ABF730CE6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52841BEBD6E657C2ED2035E8 /* Pods-NYG.debug.xcconfig */,
+				B322A122A8A924ADDF18AEEA /* Pods-NYG.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B5139082259ADC1200A67E14 = {
 			isa = PBXGroup;
 			children = (
 				B513908D259ADC1200A67E14 /* NYG */,
 				B513908C259ADC1200A67E14 /* Products */,
+				B4151D00796E5D5ABF730CE6 /* Pods */,
+				4A584E6271E740863845D804 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +94,11 @@
 				B51390AB259AE9A600A67E14 /* EventView.swift */,
 				B51390A5259AE51500A67E14 /* EventResultsView.swift */,
 				B51390A2259AE4D100A67E14 /* OnboardingView.swift */,
+				B51390BE259BDC5F00A67E14 /* IconSelectionView.swift */,
 				B51390A8259AE54400A67E14 /* Models.swift */,
 				B5139092259ADC1300A67E14 /* Assets.xcassets */,
 				B5139097259ADC1300A67E14 /* Info.plist */,
+				B51390C1259D98D800A67E14 /* GoogleService-Info.plist */,
 				B5139094259ADC1300A67E14 /* Preview Content */,
 			);
 			path = NYG;
@@ -88,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B513909A259ADC1300A67E14 /* Build configuration list for PBXNativeTarget "NYG" */;
 			buildPhases = (
+				E2A22BAE85B1125E99261CFC /* [CP] Check Pods Manifest.lock */,
 				B5139087259ADC1200A67E14 /* Sources */,
 				B5139088259ADC1200A67E14 /* Frameworks */,
 				B5139089259ADC1200A67E14 /* Resources */,
+				998E98E50CD058E770442F98 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,10 +173,53 @@
 			files = (
 				B5139096259ADC1300A67E14 /* Preview Assets.xcassets in Resources */,
 				B5139093259ADC1300A67E14 /* Assets.xcassets in Resources */,
+				B51390C2259D98D800A67E14 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		998E98E50CD058E770442F98 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYG/Pods-NYG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYG/Pods-NYG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYG/Pods-NYG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2A22BAE85B1125E99261CFC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYG-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5139087259ADC1200A67E14 /* Sources */ = {
@@ -154,6 +230,7 @@
 				B51390A3259AE4D100A67E14 /* OnboardingView.swift in Sources */,
 				B5139091259ADC1200A67E14 /* ContentView.swift in Sources */,
 				B51390AC259AE9A600A67E14 /* EventView.swift in Sources */,
+				B51390BF259BDC5F00A67E14 /* IconSelectionView.swift in Sources */,
 				B513908F259ADC1200A67E14 /* NYGApp.swift in Sources */,
 				B51390A9259AE54400A67E14 /* Models.swift in Sources */,
 			);
@@ -280,6 +357,7 @@
 		};
 		B513909B259ADC1300A67E14 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52841BEBD6E657C2ED2035E8 /* Pods-NYG.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +380,7 @@
 		};
 		B513909C259ADC1300A67E14 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B322A122A8A924ADDF18AEEA /* Pods-NYG.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
