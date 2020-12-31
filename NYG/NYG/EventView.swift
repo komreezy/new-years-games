@@ -6,17 +6,22 @@
 //
 
 import SwiftUI
+import FirebaseDatabase
 
 struct EventView: View {
     @State private var isShowingResults = false
+    @State var events: [Event] = []
+    @Binding var players: [Player]
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 List(events, id: \.id) { event in
                     Section {
-                        NavigationLink(destination: EventResultsView()) {
-                            Text("Ping Pong")
+                        // this is for history
+                        // grab players from firebase
+                        NavigationLink(destination: EventResultsView(isAdjustable: false, name: event.name, players: .constant([]), ranking: event.rankings, showingModal: $isShowingResults)) {
+                            Text(event.name)
                                 .padding(.vertical)
                         }
                     }
@@ -35,8 +40,19 @@ struct EventView: View {
             .navigationTitle(Text("2020"))
             .sheet(isPresented: $isShowingResults) {
                 NavigationView {
-                    EventResultsView()
+                    // this is for creation
+                    EventResultsView(isAdjustable: true, players: $players, ranking: [], showingModal: $isShowingResults)
                 }
+            }
+            .onAppear {
+                let eventsRef = Database.database().reference().child("events")
+                eventsRef.observe(DataEventType.value, with: { (snapshot) in
+                    if let events = snapshot.value as? [String: [String: AnyObject]] {
+                        createEventsArray(events)
+                    } else {
+                        print("No go")
+                    }
+                })
             }
         }
         .tabItem {
@@ -44,10 +60,31 @@ struct EventView: View {
             Text("Events")
         }
     }
-}
-
-struct EventView_Previews: PreviewProvider {
-    static var previews: some View {
-        EventView()
+    
+    private func createEventsArray(_ json: [String: [String: AnyObject]]) {
+        events = json.compactMap { id, event in
+            if let name = event["name"] as? String,
+               let rankings = event["rankings"] as? [[String: AnyObject]] {
+                let rankings = createRankingsArray(rankings)
+                return Event(id: id, name: name, rankings: rankings)
+            } else {
+                return nil
+            }
+        }
+    }
+    
+    private func createRankingsArray(_ json: [[String: AnyObject]]) -> [Event.Ranking] {
+        json.compactMap { ranking in
+            if let id = ranking["id"] as? String,
+               let name = ranking["name"] as? String,
+               let caption = ranking["caption"] as? String,
+               let points = ranking["points"] as? Int {
+                return Event.Ranking(id: id,
+                                     player: Player(id: id, name: name, caption: caption, icon: "icon", points: points),
+                                     points: points)
+            } else {
+                return nil
+            }
+        }
     }
 }

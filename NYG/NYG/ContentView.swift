@@ -8,33 +8,14 @@
 import SwiftUI
 import FirebaseDatabase
 
-var players: [Player] = [
-    Player(name: "Komran"),
-    Player(name: "Kayvon"),
-    Player(name: "Yasamin"),
-    Player(name: "Navid"),
-    Player(name: "Shawyon"),
-    Player(name: "Sherwin"),
-    Player(name: "Armon"),
-    Player(name: "Paige")
-]
-
-var events: [Event] = [
-    Event(name: "Ping Pong"),
-    Event(name: "Ping Pong"),
-    Event(name: "Ping Pong"),
-    Event(name: "Ping Pong"),
-    Event(name: "Ping Pong"),
-]
-
 struct ContentView: View {
     @State var isShowingOnboarding = true
-    @State var users: [Player] = []
+    @State var players: [Player] = []
     
     var body: some View {
         TabView {
             NavigationView {
-                List(users, id: \.id) { player in
+                List(players, id: \.id) { player in
                     HStack {
                         Image(systemName: player.icon)
                         VStack(alignment: .leading) {
@@ -57,7 +38,7 @@ struct ContentView: View {
                 Text("Home")
             }
             
-            EventView()
+            EventView(players: $players)
         }
         .accentColor(.red)
         .sheet(isPresented: $isShowingOnboarding) {
@@ -67,7 +48,6 @@ struct ContentView: View {
             let usersRef = Database.database().reference().child("users")
             usersRef.observe(DataEventType.value, with: { (snapshot) in
                 if let users = snapshot.value as? [String: [String: AnyObject]] {
-                    print(users)
                     createPlayerArray(users)
                 } else {
                     print("No go")
@@ -77,17 +57,16 @@ struct ContentView: View {
     }
     
     private func createPlayerArray(_ json: [String: [String: AnyObject]]) {
-        users = json.compactMap { id, user in
+        players = json.compactMap { id, user in
             if let name = user["name"] as? String,
                let icon = user["icon"] as? String,
                let caption = user["caption"] as? String,
                let points = user["points"] as? Int {
-                return Player(id: UUID(uuidString: "") ?? UUID(), name: name, caption: caption, icon: icon, points: points)
+                return Player(id: id, name: name, caption: caption, icon: icon, points: points)
             } else {
                 return nil
             }
         }
-        print(users)
     }
 }
 
