@@ -10,7 +10,8 @@ import SwiftUI
 struct Player: Identifiable {
     var id: UUID = UUID()
     var name: String
-    var icon: Image = Image(systemName: "gamecontroller.fill")
+    var caption: String = "Hello"
+    var icon: String = "gamecontroller.fill"
     var points: Int = Int.random(in: 1..<100)
 }
 

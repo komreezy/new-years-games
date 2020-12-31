@@ -9,6 +9,8 @@ import SwiftUI
 
 struct IconSelectionView: View {
     @Binding var showModal: Bool
+    @Binding var icon: String
+    
     var columns: [GridItem] = [
         GridItem(.fixed(100), spacing: 16),
         GridItem(.fixed(100), spacing: 16),
@@ -31,18 +33,12 @@ struct IconSelectionView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(maxWidth: 30, maxHeight: 30)
                             .onTapGesture {
-                                UserDefaults.standard.set(symbol, forKey: "icon")
+                                icon = symbol
                                 showModal.toggle()
                             }
                     }
                 }
             }
         }
-    }
-}
-
-struct IconSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        IconSelectionView(showModal: .constant(true))
     }
 }

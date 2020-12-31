@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		B51390AC259AE9A600A67E14 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51390AB259AE9A600A67E14 /* EventView.swift */; };
 		B51390BF259BDC5F00A67E14 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51390BE259BDC5F00A67E14 /* IconSelectionView.swift */; };
 		B51390C2259D98D800A67E14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B51390C1259D98D800A67E14 /* GoogleService-Info.plist */; };
+		B547DA33259DA55F006F64EC /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B547DA32259DA55F006F64EC /* UserDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		B51390AB259AE9A600A67E14 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		B51390BE259BDC5F00A67E14 /* IconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionView.swift; sourceTree = "<group>"; };
 		B51390C1259D98D800A67E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B547DA32259DA55F006F64EC /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		D0143B0A439442A17F636C05 /* Pods_NYG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,7 +66,6 @@
 				52841BEBD6E657C2ED2035E8 /* Pods-NYG.debug.xcconfig */,
 				B322A122A8A924ADDF18AEEA /* Pods-NYG.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -96,6 +97,7 @@
 				B51390A2259AE4D100A67E14 /* OnboardingView.swift */,
 				B51390BE259BDC5F00A67E14 /* IconSelectionView.swift */,
 				B51390A8259AE54400A67E14 /* Models.swift */,
+				B547DA32259DA55F006F64EC /* UserDefault.swift */,
 				B5139092259ADC1300A67E14 /* Assets.xcassets */,
 				B5139097259ADC1300A67E14 /* Info.plist */,
 				B51390C1259D98D800A67E14 /* GoogleService-Info.plist */,
@@ -226,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B547DA33259DA55F006F64EC /* UserDefault.swift in Sources */,
 				B51390A6259AE51500A67E14 /* EventResultsView.swift in Sources */,
 				B51390A3259AE4D100A67E14 /* OnboardingView.swift in Sources */,
 				B5139091259ADC1200A67E14 /* ContentView.swift in Sources */,
