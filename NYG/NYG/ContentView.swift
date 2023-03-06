@@ -14,6 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
+            
             NavigationView {
                 List(players, id: \.id) { player in
                     HStack {
